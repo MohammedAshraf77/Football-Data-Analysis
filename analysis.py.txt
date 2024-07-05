@@ -1,0 +1,30 @@
+import pandas as pd
+
+# قراءة البيانات من ملف CSV
+data = pd.read_csv('football_matches.csv')
+
+# تحليل أداء الفرق
+teams = data['team'].unique()
+team_stats = []
+
+for team in teams:
+    team_data = data[data['team'] == team]
+    goals_scored = team_data['goals_scored'].sum()
+    wins = len(team_data[team_data['result'] == 'win'])
+    losses = len(team_data[team_data['result'] == 'loss'])
+    team_stats.append({'team': team, 'goals_scored': goals_scored, 'wins': wins, 'losses': losses})
+
+team_stats_df = pd.DataFrame(team_stats)
+print("Team Performance:\n", team_stats_df)
+
+# تحليل أداء اللاعبين
+players = data['player'].unique()
+player_stats = []
+
+for player in players:
+    player_data = data[data['player'] == player]
+    goals_scored = player_data['goals_scored'].sum()
+    player_stats.append({'player': player, 'goals_scored': goals_scored})
+
+player_stats_df = pd.DataFrame(player_stats)
+print("\nPlayer Performance:\n", player_stats_df)

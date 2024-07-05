@@ -1,0 +1,11 @@
+team,player,goals_scored,result
+TeamA,Player1,2,win
+TeamA,Player2,1,win
+TeamB,Player3,1,loss
+TeamB,Player4,0,loss
+TeamC,Player5,3,win
+TeamC,Player6,1,win
+TeamA,Player1,1,loss
+TeamA,Player2,0,loss
+TeamB,Player3,2,win
+TeamB,Player4,1,win
